@@ -161,7 +161,7 @@ DATABASES = {
         "USER": "postgres",
         "PASSWORD": "Next.in@123",
         #"HOST": "host.docker.internal",
-        'HOST': '172.17.0.1'
+        'HOST': '172.17.0.1',
         "PORT": "5432",
         "OPTIONS" :{
             "options": "-c search_path=auth_service,public"
