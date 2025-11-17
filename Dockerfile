@@ -23,4 +23,4 @@ COPY . .
 
 RUN python manage.py collectstatic --noinput
 
-CMD ["gunicorn", "shop_service.wsgi:application", "--bind", "0.0.0.0:8002"]
+CMD ["gunicorn", "AuthService.wsgi:application", "--bind", "0.0.0.0:8001"]
