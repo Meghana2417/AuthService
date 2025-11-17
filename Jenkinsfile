@@ -14,7 +14,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh "docker build --no-cache -t meghana1724/Authservice:latest ."
+                sh "docker build --no-cache -t meghana1724/authservice:latest ."
             }
         }
 
@@ -26,19 +26,19 @@ pipeline {
 
         stage('Docker Push') {
             steps {
-                sh "docker push meghana1724/Authservice:latest"
+                sh "docker push meghana1724/authservice:latest"
             }
         }
 
         stage('Deploy') {
             steps {
                 sh '''
-                docker stop Authservice || true
-                docker rm Authservice || true
+                docker stop authservice || true
+                docker rm authservice || true
 
-                docker pull meghana1724/Authservice:latest
+                docker pull meghana1724/authservice:latest
 
-                docker run -d --name Authservice -p 8001:8001 meghana1724/Authservice:latest
+                docker run -d --name authservice -p 8001:8001 meghana1724/authservice:latest
                 '''
             }
         }
