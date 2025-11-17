@@ -12,5 +12,5 @@ def home(request):
 
 urlpatterns = [
     path("", home),                      #  Fix for "/"
-    path("api/auth/", include("accounts.urls")),   # your auth app
+    path("api/auth/", include("authapp.urls")),   # your auth app
 ]
